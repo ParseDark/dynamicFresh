@@ -1,5 +1,4 @@
 pipeline {
-  triggers { cron('* * * * *') }
   agent any
   stages {
     stage('trigger') {
@@ -7,5 +6,9 @@ pipeline {
         sh 'curl https://my-worker.135972134215313.workers.dev/'
       }
     }
+
+  }
+  triggers {
+    cron('* * * * *')
   }
 }
